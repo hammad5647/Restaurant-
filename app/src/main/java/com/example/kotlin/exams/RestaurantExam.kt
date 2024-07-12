@@ -120,8 +120,8 @@ fun main() {
             println("5. List All Tables and Customers")
             println("6. Display Customer Details")
             println("7. Exit")
-
-            when (readLine()?.toInt()) {
+            var ch = readLine()?.toInt()
+            when (ch) {
                 1 -> {
                     println("Enter table ID:")
                     val tableId = readLine()?.toInt()
@@ -132,9 +132,9 @@ fun main() {
 
                 2 -> {
                     println("Enter customer ID:")
-                    val customerId = readLine()?.toInt() ?: continue
+                    val customerId = readLine()?.toInt()
                     println("Enter customer name:")
-                    val name = readLine() ?: continue
+                    val name = readLine()
                     try {
                         restaurant.addCustomer(Customer(customerId, name))
                     } catch (e: Exception) {
@@ -154,7 +154,6 @@ fun main() {
                         println("Error: ${e.message}")
                     }
                 }
-
                 4 -> {
                     println("Enter customer ID:")
                     val customerId = readLine()?.toInt() ?: continue
@@ -166,7 +165,6 @@ fun main() {
                         println("Error: ${e.message}")
                     }
                 }
-
                 5 -> {
                     restaurant.displayDetails()
                 }
